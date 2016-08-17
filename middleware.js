@@ -1,4 +1,3 @@
-module.exports = function() {
     var middleware = {
     requireAuthentication: function(req, res, next) {
         console.log('Private route hit!');
@@ -9,4 +8,5 @@ module.exports = function() {
         next();
     }
 };
-}
+
+module.exports = middleware;
