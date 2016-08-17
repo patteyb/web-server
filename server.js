@@ -7,7 +7,7 @@ var PORT = process.env.PORT || 3000;
 
 var middleware = {
     requireAuthentication: function(req, res, next) {
-        console.log('private route hit');
+        console.log('Private route hit!');
         next();
     },
     logger: function(req, res, next) {
