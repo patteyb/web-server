@@ -5,16 +5,8 @@ var app = express();
 // or my local port of 3000
 var PORT = process.env.PORT || 3000;
 
-var middleware = {
-    requireAuthentication: function(req, res, next) {
-        console.log('Private route hit!');
-        next();
-    },
-    logger: function(req, res, next) {
-        console.log('Request: ' + new Date().toString() + ' '  + req.method + ' ' + req.originalUrl);
-        next();
-    }
-};
+var middleware = require('./middleware');
+
 
 // calling middleware in a app.use will cause it to be applied
 // to all the routes. Calling it in the app.get for a specific
